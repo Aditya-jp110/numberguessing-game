@@ -1,0 +1,62 @@
+package game1;
+import java.util.*;
+
+public class numeGuessing {
+	
+public static void main(String[] args) {
+	//Generate a random number by our choice b/w 1 to 100 
+	// scanner class is create
+	Scanner scan = new Scanner(System.in);
+	System.out.println("what you want to be your random number");
+	int randomNumber = (int)(Math.random() *100) + 1;
+	
+	
+	
+	// here the game is Start
+	// chances control part 
+	boolean guessedCorrectly = false; 
+	int numberOfChances = 0;
+	System.out.println("Select the number b/w 1 to 100:");
+	while(!guessedCorrectly && numberOfChances < 3 )
+	{
+		// prompt the user to guesses a number
+		// take  the user's  guess
+		int userTake = scan.nextInt();
+		
+		
+//	 check whether the value is correct or not  
+	if(userTake == randomNumber) {
+		guessedCorrectly = true;
+	}
+	else {
+		numberOfChances++;
+		if(userTake > randomNumber) {
+			System.out.println("your guess is too high.");
+			}
+		else
+		{
+			System.out.println("your guess is to low.");
+		}
+	}
+	}
+	
+	scan.close();
+	if(guessedCorrectly){
+System.out.println("congratulations! you guess correctly! the number was "+randomNumber);
+	}
+	else{
+		System.out.println("Sorry ,  you run of guesses.the correct answer was " + randomNumber);
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+}
